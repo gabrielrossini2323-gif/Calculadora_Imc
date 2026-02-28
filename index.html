@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora IMC</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="./script.js" defer></script>
+</head>
+<body>
+   <main>
+    <h1>Calculadora de IMC</h1>
+    <section>
+        <h2>Cadastro de informações</h2>
+        <form method="post" id="form-imc">
+            <div class="campo-form">
+                <label for="nome">Nome</label>
+                <input
+                    type="text"
+                    id="nome"
+                    placeholder="Insira seu nome completo">
+            </div>
+            <div class="campo-form">
+                <label for="altura">Altura</label>
+                <input
+                    type="numer"
+                    id="altura"
+                    step="0.01"
+                    min="0.1"
+                    max="10"
+                    placeholder="Insira sua altura em metros Ex: 1.50">
+            </div>
+            <div class="campo-form">
+                <label for="peso">Peso</label>
+                <input
+                    type="number"
+                    id="peso"
+                    step="0.01"
+                    min="0.1"
+                    max="500"
+                    placeholder="Insira seu peso em Kg. Ex: 60">
+            </div>
+
+            <div class="conjunto-botoes">
+                <button type="reset">Limpar Formulário</button>
+                <button type="submit">Calcular</button>
+            </div>
+        </form>
+    </section>
+    <section>
+        <h2>Usuários Cadastrados</h2>
+        <table>
+            <caption>Tabela de Usuários</caption>
+            <thead>
+                <tr>
+                    <th>Nome</th>
+                    <th>Altura</th>
+                    <th>Peso</th>
+                    <th>Valor do IMC</th>
+                    <th>Classificação de IMC</th>
+                    <th>Data de cadastro</th>
+                </tr>
+            </thead>
+            <tbody id="corpo-tabela">
+            </tbody>
+        </table>
+        <button
+            class="botao-tabela" 
+            onclick="deletarRegistros()">
+            Limpar Registros
+        </button>
+    </section>
+   </main> 
+</body>
+</html>
